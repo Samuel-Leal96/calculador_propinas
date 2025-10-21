@@ -10,7 +10,7 @@ export default function OrderContents({ order }: OrderContentsProps) {
         <div>
             <h2 className='font-black text-4xl'>Connsumo</h2>
 
-            <div className="space-y-3 mt-10">
+            <div className="space-y-3 mt-5">
                 {order.length === 0 ?
                     <p className="text-center">La orden esta vacía</p>
                     : (
