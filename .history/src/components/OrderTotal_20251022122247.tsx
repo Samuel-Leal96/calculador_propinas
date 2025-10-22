@@ -9,9 +9,7 @@ type OrderTotalsProps = {
 
 export default function OrderTotal({ order, tip }: OrderTotalsProps) {
 
-    const subtotalAmount = useMemo(() => order.reduce((total, item) => total + (item.quantity * item.price), 0), [order]);
-
-    const tipAmount = useMemo(() => subtotalAmount * tip, [tip, order])
+    const subtotalAmount = useMemo(() => order.reduce((total, item) => total + (item.quantity * item.price), 0), [order])
 
     return (
         <>
@@ -22,7 +20,7 @@ export default function OrderTotal({ order, tip }: OrderTotalsProps) {
                 </p>
 
                 <p>Propina: {''}
-                    <span className="font-bold">{formatCurrency(tipAmount)}</span>
+                    <span className="font-bold">$0</span>
                 </p>
 
                 <p>Total a pagar: {''}
