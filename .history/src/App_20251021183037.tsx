@@ -1,7 +1,7 @@
 import MenuItem from "./components/MenuItem";
 import OrderContents from "./components/OrderContents";
 import OrderTotal from "./components/OrderTotal";
-import { TipPercentajeForm } from "./components/TipPercentageForm";
+import { TipPercentajeForm } from "./components/TipPercentajeForm";
 import { menuItems } from "./data/db";
 import useOrder from "./hooks/useOrder";
 
