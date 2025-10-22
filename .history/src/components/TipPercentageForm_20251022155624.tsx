@@ -39,7 +39,6 @@ export const TipPercentajeForm = ({setTip, tip}: TipPercentageFormProps) => {
               name="tip"
               value={tipOption.value}
               onChange={ e => setTip(+e.target.value) }
-              checked={tipOption.value === tip}
             />
           </div>
         ))}

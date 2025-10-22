@@ -21,7 +21,7 @@ function App() {
 
           <div className="space-y-3 mt-10">
             {menuItems.map((item) => (
-              <MenuItem
+              <MenuItem 
                 key={item.id}
                 item={item}
                 addItem={addItem}
@@ -32,28 +32,19 @@ function App() {
         </div>
 
         <div className="border border-dashed border-slate-300 p-5 rounded-lg space-y-10">
+            <OrderContents 
+              order={order}
+              removeItem={removeItem}
+            />
 
-          {order.length ? (
-            <>
-              <OrderContents
-                order={order}
-                removeItem={removeItem}
-              />
+            <TipPercentajeForm
+              setTip={setTip}
+            />
 
-              <TipPercentajeForm
-                setTip={setTip}
-                tip={tip}
-              />
-
-              <OrderTotal
-                order={order}
-                tip={tip}
-                placeOrder={placeOrder}
-              />
-            </>
-          ) : (
-            <p className="text-center">La orden esta vacía</p>
-          )}
+            <OrderTotal
+              order={order}
+              tip={tip}
+            />
         </div>
 
       </main>

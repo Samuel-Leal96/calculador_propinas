@@ -33,7 +33,7 @@ function App() {
 
         <div className="border border-dashed border-slate-300 p-5 rounded-lg space-y-10">
 
-          {order.length ? (
+          {order.length > 0 ? (
             <>
               <OrderContents
                 order={order}
@@ -54,6 +54,8 @@ function App() {
           ) : (
             <p className="text-center">La orden esta vacía</p>
           )}
+
+
         </div>
 
       </main>
