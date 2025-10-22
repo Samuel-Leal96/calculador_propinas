@@ -37,9 +37,7 @@ function App() {
               removeItem={removeItem}
             />
 
-            <TipPercentajeForm
-              setTip={setTip}
-            />
+            <TipPercentajeForm/>
 
             <OrderTotal
               order={order}

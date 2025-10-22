@@ -27,8 +27,6 @@ export default function useOrder() {
 
     return {
         order,
-        tip,
-        setTip,
         addItem,
         removeItem
     }
