@@ -28,10 +28,22 @@ export default function OrderContents({ order, dispatch }: OrderContentsProps) {
                                 </p>
                             </div>
 
-                            <button
-                                className="bg-red-800 h-8 w-8 rounded-full text-white font-black"
-                                onClick={() => dispatch({ type: 'remove-item', payload: { id: item.id } })}
-                            > X </button>
+                            <div className="flex gap-3 items-center">
+                                <button
+                                    className="bg-red-500 h-8 w-8 rounded-full text-white font-black"
+                                    onClick={() => dispatch({ type: 'decrease-item', payload: { item: item } })}
+                                > -1 </button>
+
+                                <button
+                                    className="bg-green-500 h-8 w-8 rounded-full text-white font-black"
+                                    onClick={() => dispatch({ type: 'add-item', payload: { item: item } })}
+                                > +1 </button>
+
+                                <button
+                                    className="bg-red-800 h-auto w-auto p-2 rounded-full text-white font-black"
+                                    onClick={() => dispatch({ type: 'remove-item', payload: { id: item.id } })}
+                                > Eliminar </button>
+                            </div>
 
                         </div>
                     ))

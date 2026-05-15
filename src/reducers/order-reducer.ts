@@ -3,6 +3,7 @@ import type { MenuItem, OrderItem } from "../types";
 
 export type OrderActions =
     { type: 'add-item', payload: { item: MenuItem } } |
+    { type: 'decrease-item', payload: { item: MenuItem } } |
     { type: 'remove-item', payload: { id: MenuItem['id'] } } |
     { type: 'place-order' } |
     { type: 'add-tip', payload: { tip: number } }
@@ -35,6 +36,27 @@ export const orderReducer = (
             const newItem: OrderItem = { ...action.payload.item, quantity: 1 }
             order = [...state.order, newItem];
         }
+
+        return {
+            ...state,
+            order
+        }
+    }
+
+    if (action.type === 'decrease-item') {
+
+        const itemExists = state.order.find((orderItem) => orderItem.id === action.payload.item.id);
+
+        let order: OrderItem[] = [];
+
+        if (itemExists) {
+            order = state.order.map(orderItem => orderItem.id === action.payload.item.id ?
+                { ...orderItem, quantity: orderItem.quantity - 1 } : orderItem);
+        } else {
+            const newItem: OrderItem = { ...action.payload.item, quantity: 1 }
+            order = [...state.order, newItem];
+        }
+
 
         return {
             ...state,
